@@ -1,0 +1,25 @@
+{
+  "name": "day-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1234Pratyush/Web-Dev-Practise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/1234Pratyush/Web-Dev-Practise/issues"
+  },
+  "homepage": "https://github.com/1234Pratyush/Web-Dev-Practise#readme",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "env": "^0.0.2",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1"
+  }
+}
