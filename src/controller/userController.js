@@ -42,16 +42,39 @@
     }
     };
 
-
     const allUsers = async(req,res)=>{
         try{
               const allUser = await userModel.find()
             res.status(200).send(allUser);
-              
         }
         catch(err){
             res.status(400).send("Error:" + err.message);
         }
     }
+  
+     const updateUser = async(req,res)=>{
+        try{
+                 const data = req.body;
+                 const userId = req.params.id;
+                 const userupdate = await userModel.findByIdAndUpdate(userId,data,{new:true});
+                 return res.status(200).send({message :"User Update Successfully"}); 
+        }
+        catch(err){
+              return res.status(400).send("User not updated:" + err.message);
 
-    module.exports = { createUser, login ,allUsers};
+        }
+     }
+
+
+    const deleteUser = async(req,res)=>{
+        try{
+                 const userId = req.params.id;
+                 const deleteUser = await userModel.findByIdAndDelete(userId);
+                 res.status(200).send({message:" User Deleted Successfully"});
+        }
+        catch(err){
+            res.status(400).send("User not deleted:" + err.message);
+        }
+    }
+
+    module.exports = { createUser, login, allUsers, deleteUser, updateUser };
